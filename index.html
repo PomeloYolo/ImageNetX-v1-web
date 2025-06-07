@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImageNetX Dataset Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #222;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+      animation: fadeInDown 0.6s ease-in-out;
+    }
+    header h1 {
+      margin: 10px 0 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+    nav {
+      background: #f9f9f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0055aa;
+    }
+    .language-switcher span {
+      font-weight: 600;
+      cursor: pointer;
+      color: #555;
+      margin: 0 6px;
+    }
+    .language-switcher span:hover {
+      color: #003366;
+    }
+    section {
+      max-width: 880px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #003366;
+      border-left: 4px solid #003366;
+      padding-left: 12px;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    ul, ol { margin-left: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #eef3f8;
+    }
+    .button {
+      background: #003366;
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 15px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .button:hover {
+      background: #0055aa;
+      transform: scale(1.03);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 40px 20px;
+      background: #f5f5f5;
+      margin-top: 80px;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ImageNetX</h1>
+    <p data-i18n="tagline"></p>
+  </header>
+
+  <nav>
+    <div class="nav-links">
+      <a href="#about" data-i18n="about"></a>
+      <a href="#contribute" data-i18n="contribute"></a>
+      <a href="#rewards" data-i18n="rewards"></a>
+      <a href="https://github.com/PomeloYolo/ImageNetX-v1/blob/main/contributors.md" data-i18n="contributors"></a>
+      <a href="#contact" data-i18n="contact"></a>
+    </div>
+    <div class="language-switcher">
+      <span onclick="switchLang('en')">EN</span> | <span onclick="switchLang('zh')">中文</span>
+    </div>
+  </nav>
+
+  <section id="about" data-aos="fade-up">
+    <h2 data-i18n="aboutTitle"></h2>
+    <p data-i18n="aboutText"></p>
+  </section>
+
+  <section id="contribute" data-aos="fade-up">
+    <h2 data-i18n="contributeTitle"></h2>
+    <h3 data-i18n="githubOption"></h3>
+    <ol id="github-steps"></ol>
+    <h3 data-i18n="formOption"></h3>
+    <a href="https://www.google.com" class="button" data-i18n="uploadBtn"></a>
+  </section>
+
+  <section id="rewards" data-aos="fade-up">
+    <h2 data-i18n="rewardsTitle"></h2>
+    <table>
+      <tr><th>Level</th><th>Requirement</th><th>Benefits</th></tr>
+      <tr><td>🥉 Beginner</td><td>5+ images</td><td data-i18n="reward1">Early access to the trained model</td></tr>
+      <tr><td>🥈 Core Contributor</td><td>20+ images</td><td data-i18n="reward2">Custom badge, name included on model release pages</td></tr>
+      <tr><td>🥇 Outstanding Contributor</td><td>50+ images</td><td data-i18n="reward3">Thank you card, certificate, co-author recognition</td></tr>
+    </table>
+
+  <section id="contact" data-aos="fade-up">
+    <h2 data-i18n="contactTitle"></h2>
+    <p>📧 Email: <a href="mailto:pomelo.yolo@gmail.com">pomelo.yolo@gmail.com</a></p>
+    <p>💬 GitHub: <a href="https://github.com/PomeloYolo/ImageNetX-v1" target="_blank">PomeloYolo/ImageNetX-v1</a></p>
+    <p>🗺️ Discord: <a href="https://discord.gg/xcVGpGgv" target="_blank">Join our Discord</a></p>
+  </section>
+
+  <footer>
+    <p data-i18n="footerNotice"></p>
+    <p data-i18n="footerLicense"></p>
+    <p data-i18n="footerThanks"></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const translations = {
+      en: {
+        tagline: "Open source YOLO training powered by your contributions",
+        about: "About",
+        contribute: "Contribute",
+        rewards: "Rewards",
+        contact: "Contact",
+        contributors: "Contributors",
+        aboutTitle: "📌 About the Project",
+        aboutText: "We are building a diverse, high-quality dataset to train an open YOLO object detection model, freely available via Colab, GitHub, and Hugging Face. Everyone is welcome to contribute.",
+        contributeTitle: "📄 How to Contribute",
+        githubOption: "Option 1: GitHub Pull Request (Recommended)",
+        githubSteps: [
+            "Fork the repository",
+            "Create a folder: images/your_name/",
+            "Upload your images (YOLO annotations optional)",
+            "Submit a Pull Request"
+        ],
+        formOption: "Option 2: Anonymous Upload",
+        uploadBtn: "Upload via Form",
+        rewardsTitle: "🏆 Contributor Rewards",
+        reward1: "Early access to the trained model",
+        reward2: "Custom badge, name included on model release pages",
+        reward3: "Thank you card, certificate, co-author recognition",
+        contactTitle: "📨 Contact Us",
+        footerNotice: "All submitted images must be original or properly licensed (e.g., CC0, Public Domain).",
+        footerLicense: "The dataset and trained models are released under CC BY 4.0 License.",
+        footerThanks: "Thank you for supporting open research and AI accessibility."
+      },
+      zh: {
+        tagline: "開源 YOLO 訓練，來自你的貢獻",
+        about: "關於計畫",
+        contribute: "投稿方式",
+        rewards: "獎勵制度",
+        contact: "聯絡我們",
+        contributors: "投稿者",
+        aboutTitle: "📌 關於此專案",
+        aboutText: "我們正在打造一個多元且高品質的圖片資料集，以訓練開源 YOLO 模型，並透過 Colab、GitHub 與 Hugging Face 提供。歡迎大家投稿圖片！",
+        contributeTitle: "📄 如何投稿",
+        githubOption: "方式一：GitHub Pull Request（推薦）",
+        githubSteps: [
+          "Fork 本倉庫",
+          "建立資料夾：images/你的名稱/",
+          "上傳圖片（可附加 YOLO 標註）",
+          "送出 Pull Request"
+        ],
+        formOption: "方式二：匿名表單上傳",
+        uploadBtn: "表單上傳",
+        rewardsTitle: "🏆 投稿者獎勵",
+        reward1: "可搶先存取訓練模型",
+        reward2: "專屬徽章、名字列於發佈頁面",
+        reward3: "感謝卡、證書、共同作者名義",
+        contactTitle: "📨 聯絡我們",
+        footerNotice: "投稿圖片須為原創或具授權（如 CC0、公有領域）",
+        footerLicense: "本資料集與模型皆採用 CC BY 4.0 授權釋出。",
+        footerThanks: "感謝你支持開放研究與 AI 普及化"
+      }
+    };
+
+    function switchLang(lang) {
+      const t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (Array.isArray(t[key])) {
+          const list = el.tagName === 'OL' ? el : el.querySelector('ol');
+          if (list) {
+            list.innerHTML = t[key].map(item => `<li>${item}</li>`).join('');
+          }
+        } else if (t[key]) {
+          el.textContent = t[key];
+        }
+      });
+    }
+
+    // Default to English
+    switchLang('en');
+  </script>
+</body>
+</html>
